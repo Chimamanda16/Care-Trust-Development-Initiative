@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Title -->
+		<title>CareTrust Initiative</title>
+		<!-- Bootstrap CDN Links -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		<!-- Font Awesome Link -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- Google Font Link -->
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        <!-- Stylesheet Link -->
+		<link rel="stylesheet" href="css/Styles.css">
+	</head>
+	<body>
+		<!-- Home Section -->
+        <%- include("header") -%>
+		<section class="home-section">
+			<!-- Title Image -->
+            <div class="image-carousel" id="home">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="20000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/work1a.jpg" class="d-block w-100 carousel-img" alt="slide-one">
+                            <div class="carousel-content">
+                                <h1>CareTrust Initiative</h1>
+                                <h2>Eradicating poverty in Nigeria.</h2>
+                                <a href="https://api.whatsapp.com/send?phone=08039574516&text=Hello, I want to become a member of CATRUFDEVI. My name is ___"><button class="carousel-btn">Join Us</button></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/work2a.jpg" class="d-block w-100 carousel-img" alt="slide-two">
+                            <div class="carousel-content">
+                                <h1>Over 200 communities Impacted</h1>
+                                <h2>Including rural areas</h2>
+                                <a href="https://api.whatsapp.com/send?phone=08039574516&text=Hello, I want to sponsor CATRUFDEVI's next programme. My name is ___"><button class="carousel-btn">Sponsor our next programme</button></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/work3a.jpg" class="d-block w-100 carousel-img" alt="slide-three">
+                            <div class="carousel-content">
+                                <h1>Over 200 children helped</h1>
+                                <h2>Not including adults and elderly people</h2>
+                                <a href="https://api.whatsapp.com/send?phone=08039574516&text=Hello, I want to make a donation to CATRUDEVI to support your cause. My name is ___"><button class="carousel-btn">Send a donation</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+		</section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container text-center">
+                <h3 class="section-title">About The Foundation</h3>
+                <div class="row">
+                    <h5>Our purpose</h5>
+                    <div class="col-lg-6 about-para">
+                        <p class="about-text">CareTrust Foundation is a non-govermental organisation with the mission to reduce poverty in Nigeria, provision of quality and affordable healthcare, education and participatory community development. CareTrust Development initiative also targets young, talented leaders by motivating, developing, training, inspiring  those affected by HIV/AIDS, displaced persons, indigent persons, empowering, educating and caring for the less priviledged, orphans, the girl child and general youth towards entrepreneurship and healthcare benefits by improving their education & well-being as an individual investment in our society both home and abroad, thereby, making them have a sense of recognition and belonging. It adopted decentralisation policies, which lead to her building synergy and networking with support groups of PLWHIVs in some Local Government Areas across the country. The organisation through her consultants has also partenered with Anambra SACA, Voices for change, FHI 360 and Society for Family Health(SFH), Development in Practice etc, in various projects.</p>
+                    </div>
+                    <!-- About Image -->
+                    <div class="col-lg-6">
+                        <img src="images/work1b.jpg" alt="" class="about-img">
+                    </div>
+                </div>
+                <form action="/about">
+                    <button type="submit" class="button about-btn">Learn more</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Our Works -->
+        <section class="work-section" id="activities">
+            <div class="container g-0">
+                <h3 class="section-title">Our work</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images/work1a.jpg" class="work-img" alt="work-image">
+                        <a href="">Reaching out to people</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/work2a.jpg" class="work-img" alt="work-image">
+                        <a href="">Empowering people with talking</a>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/work3a.jpg" class="work-img" alt="work-image">
+                        <a href="">CareTrust Foundation</a>
+                    </div>
+                </div>
+                <button class="button">View more</button>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="support-section" id="donate">
+            <div class="container">
+                <h3 class="section-title">Help make a difference</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="support-box">
+                            <p>Join us and take part in our next programme to help support people all over Nigeria</p>
+                            <button class="button">Join us</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="support-box">
+                            <p>Sponsor our next programme and help people living in high risk areas regain their health.</p>
+                            <button class="button">Sponsorship</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="support-box">
+                            <p>Make a donation and give the little you have to facilitate our projects.</p>
+                            <button class="button">Make a donation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include("footer") -%>
+
+        <script src="/index.js" charset="utf-8"></script>
+    </body>
+</html>

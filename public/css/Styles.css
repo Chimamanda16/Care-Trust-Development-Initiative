@@ -1,0 +1,205 @@
+body{
+    background-color: #ffffff;
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+h3{
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 5%;
+}
+
+h5{
+    color: #0367ac;
+    margin-bottom: 1%;
+    text-align: left;
+}
+
+li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.about-btn{
+    display: block;
+    width: 15%;
+}
+
+.about-img{
+    height: -webkit-fill-available;
+    max-width: inherit;
+    object-fit: cover;
+    width: 450px;
+}
+
+.about-section{
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.about-section, .home-section, .support-section, .work-section{
+    margin-bottom: 5%;
+}
+
+.about-text{
+    color: #000;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 1.7;
+    padding: 3% 0;
+    text-align: left;
+}
+
+.button{
+    background-color: #0367ac;
+    border: none;
+    border-radius: 4px;
+    margin: 3% 0%;
+    padding: 10px 24px;
+    text-align: center;
+}
+
+.carousel-btn{
+    background-color: #de0f7a;
+    border: none;
+    border-radius: 80px;
+    color: #000;
+    font-size: 18px;
+    padding: 12px 35px;
+    text-align: center;
+}
+
+.carousel-content{
+    color: white;
+    margin-left: 15%;
+    position: absolute;
+    top: 50%;
+}
+
+.carousel-content h1{
+    font-weight: 900;
+    margin-bottom: 5%;
+}
+
+.carousel-content h2{
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    display: none;
+}
+
+.carousel-item{
+    height: 100vh;
+}
+
+.carousel-img{
+    filter: brightness(0.6);
+    height: 100vh;
+    object-fit: cover;
+}
+
+.footer{
+    background-color: #f8f9fa;
+    padding: 5% 0;
+}
+
+.footer-btn{
+    background-color: #de0f7a;
+}
+
+.input{
+    margin-bottom: 2%;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.logo{
+    object-fit: cover;
+    width: 100px;
+}
+
+.nav-item{
+    animation: lazyload 2s;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.section-title{
+    color: #de0f7a;
+    font-size: 30px;
+}
+
+.section-title::after{
+    background-color: #0367ac;
+    content: " ";
+    display: block;
+    height: 3px;
+    position: absolute;
+    width: 5%;
+}
+
+.support-box{
+    background-color: #f8f9fa;
+    padding: 40px;
+}
+
+.work-img{
+    height: 250px;
+    max-width: 100%;
+    object-fit: cover;
+    width: 400px;
+}
+
+.work-img + a{
+    color: #0367ac;
+    display: block;
+    text-align: center;
+}
+
+@keyframes lazyload {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideinLeft {
+    from{
+        transform: translate(-200px, 200px);
+    }
+    to{
+        transform: translate(0px, 0px);
+
+    }
+}
+
+@keyframes slideinRight {
+    from{
+        transform: translate(200px, 200px);
+    }
+    to{
+        transform: translate(0px, 0px);
+
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .about-btn{
+        width: auto;
+    }   
+}

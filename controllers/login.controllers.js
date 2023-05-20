@@ -13,7 +13,6 @@ module.exports.authenticate = (req, res) =>{
         if(response.Password === md5(password)){
             getPost().then((foundArticles) =>{
                 res.render("admin", {articles: foundArticles});
-                console.log(foundArticles);
             });
         }
         else{

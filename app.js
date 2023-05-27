@@ -1,8 +1,8 @@
 const express  = require("express");
 const app = express();
-const port = 3000;
 const mongoose = require("mongoose");
 const router = require("./routes/index.routes");
+const port = 3000;
 
 require("dotenv").config();
 

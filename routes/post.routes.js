@@ -1,9 +1,10 @@
 //Get request for the main page
 const express = require('express');
-
 const postRouter = express.Router();
+const {addPost} = require("../controllers/post.controller");
 
-postRouter.get('/', (req, res) =>{
+postRouter.post('/post', () =>{
+    addPost;
     res.render("post");
 });
 

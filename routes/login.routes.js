@@ -1,15 +1,14 @@
 //Get request for the login page
 const express = require('express');
 const app = express();
+const loginRouter = express.Router();
+
 app.use(express.urlencoded({extended:true}));
-
 app.use(express.json());
-
 app.set("view engine", "ejs");
 
-const {authenticate} = require("../controllers/login.controllers");
+const { authenticate } = require("../controllers/login.controllers");
 
-const loginRouter = express.Router();
 
 loginRouter.get('/login', (req, res) =>{
     res.render("login");
@@ -17,11 +16,11 @@ loginRouter.get('/login', (req, res) =>{
 
 // loginRouter.post("/login", authenticate);
 loginRouter.post("/login", (req, res) =>{
-    if(req.body.name = "publish"){
+    if(req.body.btn === "publish"){
         res.render("post");
     }
     else{
-        authenticate;
+        authenticate(req, res);
     }
 });
 

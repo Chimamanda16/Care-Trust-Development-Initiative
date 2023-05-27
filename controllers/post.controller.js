@@ -1,23 +1,16 @@
 const express = require('express');
 const app = express();
-const post = require("../models/post.model");
-const getPost = require('./admin.controllers');
+const Post = require("../models/post.model");
 
 app.use(express.json());
 
-module.exports.authenticate = (req, res) =>{
+module.exports.addPost = (req, res) =>{
     
-    const {username, password} = req.body;
-    Login.findOne({Email: username}).then((response) =>{
-        if(response.Password === md5(password)){
-            getPost().then((foundArticles) =>{
-                res.render("admin", {articles: foundArticles});
-            });
-        }
-        else{
-            alert("Incorrect Email/password");
-            res.redirect("login");
-        }
-    });
+    const {content} = req.body;
 
+    const newPost = new Post({
+        Body: content
+    });
+    newPost.save();
+    console.log("saved");
 }

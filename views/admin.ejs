@@ -42,7 +42,6 @@
 
         <div class="articles">
             <% articles.forEach((article) =>{ %>
-                <h1> <%= article.Title %> </h1>
                 <% if(article.Body.length > 100){ %>
                     <% let postbody = article.Body.substring(0, 100) + "...";  %>
                     <form action="/posts" method="post">

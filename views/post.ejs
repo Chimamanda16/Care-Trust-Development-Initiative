@@ -10,10 +10,9 @@
         <title>Document</title>
     </head>
     <body>
-        <!-- <form action="/publish" method="post"> -->
-        <form method="post">
+        <form action="/publish" method="post">
             <textarea name="editor" id="myTextarea">Make a post</textarea>
-            <button type="submit" onclick="getArticle">Submit</button>
+            <button type="submit" name="publish">Submit</button>
         </form>
         <script>
             tinymce.init({
@@ -24,10 +23,6 @@
                 tinycomments_mode: 'embedded',
                 tinycomments_author: 'Author name'
             });
-            function getArticle(){
-                var article = tinymce.get("myTextarea").getContent({format: "text"});
-                console.log(article);
-            }
       </script>
     </body>
     

@@ -4,9 +4,10 @@ const Post = require("../models/post.model");
 
 app.use(express.json());
 
-module.exports.addPost = (req, res) =>{
+module.exports.addPost = (req) =>{
     
-    const {content} = req.body;
+    const content = req;
+    console.log (content);
 
     const newPost = new Post({
         Body: content

@@ -7,20 +7,30 @@ const getPost = require('./admin.controllers');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-module.exports.authenticate = (req, res) =>{
-    console.log("Ok?");
+async function post(res){
+    const foundArticles = await getPost();
+    res.render("admin", {articles: foundArticles});
+}
+
+
+module.exports.getArticles = post;
+
+module.exports.authenticate = async function(req, res){
+        
     const {username, password} = req.body;
-    Login.findOne({Email: username}).then((response) =>{
+    try{
+        const response = await Login.findOne({Email: username})
         if(response.Password === md5(password)){
-            getPost().then((foundArticles) =>{
-                res.render("admin", {articles: foundArticles});
-            });
+            post(res);
         }
         else{
-            alert("Incorrect Email/password");
-            res.redirect("login");
-        }
-    });
+            res.send("Incorrect Email/password. Please go back to the login page!");
+        }        
+    }
+    catch(error){
+        console.error(error);
+        res.send("An error occured");
+    }
 
 
 

@@ -10,37 +10,25 @@
         <title>Document</title>
     </head>
     <body>
-        <textarea name="" id="myTextarea">Make a post</textarea>
+        <!-- <form action="/publish" method="post"> -->
+        <form method="post">
+            <textarea name="editor" id="myTextarea">Make a post</textarea>
+            <button type="submit" onclick="getArticle">Submit</button>
+        </form>
         <script>
             tinymce.init({
-            selector: '#myTextarea',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [
-                { value: 'First.Name', title: 'First Name' },
-                { value: 'Email', title: 'Email' },
-            ]
+                element_format: 'text',
+                selector: '#myTextarea',
+                plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name'
             });
-            console.debug(tinymce.activeEditor.getContent());
-            tinymce.activeEditor.getContent({format: "text"});
-            tinymce.get("myTextarea").getContent();
-
-            fetch("/post", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({content: editorContent})
-            })
-            .then((response) =>{
-                console.log(response);
-            })
-            .catch((err) =>{
-                console.log(err);
-            })
-      </script>    
+            function getArticle(){
+                var article = tinymce.get("myTextarea").getContent({format: "text"});
+                console.log(article);
+            }
+      </script>
     </body>
     
     </html>

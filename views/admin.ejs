@@ -41,18 +41,20 @@
         <%- include("sidebar") -%>
 
         <div class="articles">
+
             <% articles.forEach((article) =>{ %>
                 <% if(article.Body.length > 100){ %>
                     <% let postbody = article.Body.substring(0, 100) + "...";  %>
-                    <form action="/posts" method="post">
+                    <form action="/post" method="post">
                         <p> <%= postbody %> </p>
                         <button type="submit">View</button>
-                        <input type="hidden" name="title" value="<%= article.Title %>">
                     </form>
                 <% } %>
                 <% if(article.Body.length < 100){ %>
                     <% let postbody = article.Body; %>
-                    <p> <%= postbody %> </p>
+                    <form action="" method="post">
+                        <p> <%= postbody %> </p>
+                    </form>
                 <% } %>
             <% })  %>
 

@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Tinymce CDN Link -->
         <script src="https://cdn.tiny.cloud/1/ykamhomudu10zrr2sfhdinnfagi99piu3a38kzq4bfk4i0bq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-        
-        <title>Document</title>
+        <title>New Post</title>
     </head>
     <body>
         <form action="/publish" method="post">
             <textarea name="editor" id="myTextarea">Make a post</textarea>
             <button type="submit" name="publish">Submit</button>
         </form>
+
         <script>
             tinymce.init({
                 element_format: 'text',
@@ -23,7 +23,7 @@
                 tinycomments_mode: 'embedded',
                 tinycomments_author: 'Author name'
             });
-      </script>
+        </script>
+
     </body>
-    
-    </html>
+</html>

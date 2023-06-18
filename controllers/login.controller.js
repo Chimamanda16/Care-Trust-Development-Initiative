@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const md5 = require("md5");
+const Images = require("../models/imgs.model");
 const Login = require("../models/login.model");
-const Post = require("../models/article.model");
+const Post = require("../models/articles.model");
 const getPost = require('./admin.controllers');
 
 app.use(express.urlencoded({ extended: true }));
@@ -10,17 +11,53 @@ app.use(express.json());
 
 async function post(res){
     const foundArticles = await getPost();
+    const Images = await getPost();
+    foundArticles.forEach(article =>{
+        let content = article.Body;
+        const keyword = "Image saved here ";
+        const keywordLength = keyword.length;
+
+        let currentIndex = 0;
+        let occurrences = [];
+
+        while (currentIndex !== -1) {
+            currentIndex = content.indexOf(keyword, currentIndex);
+
+            if (currentIndex !== -1) {
+                const startIndex = currentIndex + keywordLength;
+                const endIndex = content.indexOf(" ", startIndex);
+
+                const extractedValue = content.substring(startIndex, endIndex !== -1 ? endIndex : undefined);
+
+                occurrences.push(extractedValue);
+                currentIndex = endIndex !== -1 ? endIndex : currentIndex + keywordLength;
+            }
+        }
+
+        occurrences.forEach(occurrence =>{
+            Images.findOne({ImgId: occurrence})
+            .then(response =>{
+                let imgUrl = response.ImgUrl;
+                let imageTag = "<img src=" + imgUrl + ">";
+                occurrence.replace(imageTag);
+            })
+            .catch(err =>{
+                console.log(err);
+            })
+        });
+
+    });
     res.render("admin", {articles: foundArticles});
 }
 
 
-async function article(req, res){
+async function getArticle(req, res){
     const response = await Post.findOne({Body: req});
-    const article = response.Body;
+    let article = response.Body;
     res.render("about", {article: article});
 }
 
-module.exports.getArticle = article;
+module.exports.getArticle = getArticle;
 module.exports.getArticles = post;
 
 module.exports.authenticate = async function(req, res){

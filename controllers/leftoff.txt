@@ -1,0 +1,6 @@
+For the next time you come *sad emoji*, Everything is not in place
+The image tags are not being replaced by the string("image saved here" + imgId)
+Try replacing the string. If it works then you're good to go but if it doesn't, *sad distressed emoji*, *about to cry emoji*, just go and use the method in the article Arinze gave you. There's another link inside the s=article. Use that method please.
+I'll really miss coding.
+*Sad depressed and emotionally distressed emoji* Bye
+I'm adding this line because I don't like odd numbers and don't want to have 5 lines.

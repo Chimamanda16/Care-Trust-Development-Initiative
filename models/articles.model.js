@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 let Post = new Schema({
     Body: String,
-    filename: String,
-    
+    FileId: String,
 });
 
 module.exports = mongoose.model("Post", Post);

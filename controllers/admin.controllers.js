@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const Post = require("../models/post.model");
+const Post = require("../models/article.model");
 
 function getPost(){
     return Post.find();

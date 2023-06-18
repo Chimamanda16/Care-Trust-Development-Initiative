@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const md5 = require("md5");
 const Login = require("../models/login.model");
+const Post = require("../models/article.model");
 const getPost = require('./admin.controllers');
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +14,13 @@ async function post(res){
 }
 
 
+async function article(req, res){
+    const response = await Post.findOne({Body: req});
+    const article = response.Body;
+    res.render("about", {article: article});
+}
+
+module.exports.getArticle = article;
 module.exports.getArticles = post;
 
 module.exports.authenticate = async function(req, res){

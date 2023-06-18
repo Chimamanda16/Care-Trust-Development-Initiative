@@ -1,9 +1,7 @@
 const express = require('express');
-const app = express();
 const cheerio = require("cheerio");
-const Post = require("../models/post.model");
 
-app.use(express.json());
+const Post = require("../models/post.model");
 
 module.exports.addPost = (req) =>{
     const content = req;
@@ -14,4 +12,4 @@ module.exports.addPost = (req) =>{
     });
     newPost.save();
     console.log("saved");
-}
+};

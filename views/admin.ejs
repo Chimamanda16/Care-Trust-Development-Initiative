@@ -44,10 +44,11 @@
 
             <% articles.forEach((article) =>{ %>
                 <% if(article.Body.length > 100){ %>
+                    <% let body = article.Body %>
                     <% let postbody = article.Body.substring(0, 100) + "...";  %>
-                    <form action="/post" method="post">
+                    <form action="/article" method="get">
                         <p> <%= postbody %> </p>
-                        <button type="submit">View</button>
+                        <button type="submit" name="getArticle" value= "<%= body %>">View</button>
                     </form>
                 <% } %>
                 <% if(article.Body.length < 100){ %>

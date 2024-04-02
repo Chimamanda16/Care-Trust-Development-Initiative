@@ -5,12 +5,15 @@ const Images = require("../models/imgs.model");
 const Login = require("../models/login.model");
 const Post = require("../models/articles.model");
 const getPost = require('./admin.controllers');
+var foundArticles;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 async function post(res){
-    const foundArticles = await getPost();
+    foundArticles = await getPost();
+    module.exports.foundArticles = foundArticles;
+
     const Images = await getPost();
     foundArticles.forEach(article =>{
         let content = article.Body;
@@ -47,7 +50,8 @@ async function post(res){
         });
 
     });
-    res.render("admin", {articles: foundArticles});
+    res.redirect("/admin");
+    // res.render("admin", {articles: foundArticles});
 }
 
 
@@ -65,7 +69,6 @@ module.exports.authenticate = async function(req, res){
     const {username, password} = req.body;
     try{
         const response = await Login.findOne({Email: username});
-        console.log(response.Password, md5(password));
         if(response.Password === md5(password)){
             post(res);
         }

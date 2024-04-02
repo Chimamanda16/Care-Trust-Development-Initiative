@@ -12,8 +12,9 @@ app.use(express.json());
 
 postRouter.post('/publish', (req, res) =>{
     const articleBody = req.body.editor;
-    addPost(articleBody);
-    getArticles(res);
+    console.log(articleBody);
+    // addPost(articleBody);
+    // getArticles(res);
 });
 
 postRouter.get("/article", (req, res)=>{

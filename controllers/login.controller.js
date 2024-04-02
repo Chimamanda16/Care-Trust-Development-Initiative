@@ -64,7 +64,8 @@ module.exports.authenticate = async function(req, res){
         
     const {username, password} = req.body;
     try{
-        const response = await Login.findOne({Email: username})
+        const response = await Login.findOne({Email: username});
+        console.log(response.Password, md5(password));
         if(response.Password === md5(password)){
             post(res);
         }
@@ -76,19 +77,5 @@ module.exports.authenticate = async function(req, res){
         console.error(error);
         res.send("An error occured");
     }
-
-
-
-    // console.log(req.body);
-    // const {username, password} = req.body;
-    // const login = new Login({
-    //     Email: username,
-    //     Password: md5(password)
-    // });
-    // login.save().then((response) =>{
-    //     console.log(response);
-    // }).catch((err) =>{
-    //     console.log(err);
-    // });
 
 }

@@ -22,7 +22,7 @@
             margin-bottom: 2rem;
         }
         p{
-            display: inline;
+            display: block;
         }
         h1{
             margin-top: 40px;
@@ -43,22 +43,24 @@
         <div class="articles">
 
             <% articles.forEach((article) =>{ %>
-                <% if(article.Body.length > 100){ %>
-                    <% let body = article.Body %>
-                    <% let postbody = article.Body.substring(0, 100) + "...";  %>
+                <% let title = article.Title  %>
+                <% let body = article.Body %>
+                <% if(body.length > 100){ %>
+                    <% let postbody = body.substring(0, 100) + "...";  %>
                     <form action="/article" method="get">
+                        <h2> <%= title %> </h2>
                         <p> <%= postbody %> </p>
                         <button type="submit" name="getArticle" value= "<%= body %>">View</button>
                     </form>
                 <% } %>
-                <% if(article.Body.length < 100){ %>
-                    <% let postbody = article.Body; %>
-                    <form action="" method="post">
-                        <p> <%= postbody %> </p>
+                <% if(body.length < 100){ %>
+                    <form action="/article" method="get">
+                        <h2> <%= title  %> </h2>
+                        <p> <%= body %> </p>
+                        <button type="submit" name="getArticle" value= "<%= body %>">View</button>
                     </form>
                 <% } %>
             <% })  %>
-
 
         </div>
     </div>

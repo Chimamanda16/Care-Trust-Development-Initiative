@@ -6,10 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Tinymce CDN Link -->
         <script src="https://cdn.tiny.cloud/1/ykamhomudu10zrr2sfhdinnfagi99piu3a38kzq4bfk4i0bq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <link rel="stylesheet" href="css/postStyles.css">
         <title>New Post</title>
     </head>
     <body>
         <form action="/publish" method="post">
+            <label for="blog-title">Title</label>
+            <input type="text" name="title" id="blog-title"  value="" placeholder="Title" class="title" required>
             <textarea name="editor" id="myTextarea">Make a post</textarea>
             <button type="submit">Submit</button>
         </form>

@@ -15,7 +15,6 @@ async function post(res){
     res.redirect("/admin");
 }
 
-
 async function getArticle(req, res){
     const response = await Post.findOne({Body: req});
     let article = response.Body;

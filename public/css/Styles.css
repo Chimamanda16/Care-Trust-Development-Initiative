@@ -57,6 +57,14 @@ li{
     text-align: left;
 }
 
+.article-title{
+    margin: 4% 2%;
+}
+
+.article-body{
+    margin: 0% 2%;
+}
+
 .button{
     background-color: #0367ac;
     border: none;

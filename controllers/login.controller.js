@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const md5 = require("md5");
+const cheerio = require("cheerio");
 const Login = require("../models/login.model");
 const Post = require("../models/articles.model");
 const getPost = require('./admin.controllers');
@@ -17,11 +18,11 @@ async function post(res){
 
 async function getArticle(req, res){
     const response = await Post.findOne({Title: req});
-    // console.log("response: " + response);
-    // console.log("req: " + req);
     let article = response.Body;
+    const $ = cheerio.load(article);
+    const toHtml = $.html();
     let articleTitle = response.Title
-    res.render("about", {article: article, title: articleTitle});
+    res.render("about", {article: toHtml, title: articleTitle});
 }
 
 module.exports.getArticle = getArticle;

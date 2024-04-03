@@ -4,6 +4,7 @@ const app =  express();
 const postRouter = express.Router();
 
 const { addPost } = require("../controllers/post.controller");
+const { authenticate } = require("../controllers/login.controller");
 const { getArticles } = require("../controllers/login.controller");
 const { getArticle } = require("../controllers/login.controller");
 
@@ -20,5 +21,15 @@ postRouter.get("/article", (req, res)=>{
     const article = req.query.getArticle;
     getArticle(article, res);
 });
+
+postRouter.post("/newPost", (req, res) =>{
+    if(req.body.btn === "publish"){
+        res.render("post");
+    }
+    else{
+        authenticate(req, res);
+    }
+});
+
 
 module.exports = postRouter;

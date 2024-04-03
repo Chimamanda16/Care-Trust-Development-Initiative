@@ -13,12 +13,7 @@ loginRouter.get('/login', (req, res) =>{
 });
 
 loginRouter.post("/login", (req, res) =>{
-    if(req.body.btn === "publish"){
-        res.render("post");
-    }
-    else{
         authenticate(req, res);
-    }
 });
 
 

@@ -26,4 +26,4 @@ postRouter.post('/publish', (req, res) =>{
     getArticles(res);
 });
 
-module.exports = postRouter;
+module.exports.postRouter = postRouter;

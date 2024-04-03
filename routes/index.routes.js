@@ -5,7 +5,7 @@ const homeRouter = require("./home.routes");
 const aboutRouter = require("./about.routes");
 const adminRouter = require("./admin.routes");
 const loginRouter = require("./login.routes");
-const postRouter = require("./post.routes");
+const {postRouter} = require("./post.routes");
 
 router.use("/", homeRouter);
 router.use("/", aboutRouter);

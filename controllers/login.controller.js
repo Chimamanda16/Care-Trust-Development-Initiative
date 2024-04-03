@@ -16,9 +16,12 @@ async function post(res){
 }
 
 async function getArticle(req, res){
-    const response = await Post.findOne({Body: req});
+    const response = await Post.findOne({Title: req});
+    // console.log("response: " + response);
+    // console.log("req: " + req);
     let article = response.Body;
-    res.render("about", {article: article});
+    let articleTitle = response.Title
+    res.render("about", {article: article, title: articleTitle});
 }
 
 module.exports.getArticle = getArticle;

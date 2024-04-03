@@ -5,14 +5,14 @@ const postRouter = express.Router();
 
 const { addPost } = require("../controllers/post.controller");
 const { getArticles } = require("../controllers/login.controller");
-const { getArticle } = require("../controllers/login.controller");
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-postRouter.get("/article", (req, res)=>{
-    const article = req.query.getArticle;
-    getArticle(article, res);
+postRouter.post("/article", (req, res)=>{
+    const article = req.body.getArticle;
+    module.exports.article = article;
+    res.redirect("/about");
 });
 
 postRouter.post("/newPost", (req, res) =>{

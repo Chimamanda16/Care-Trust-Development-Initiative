@@ -38,6 +38,10 @@ li{
     width: 450px;
 }
 
+.about-para{
+    padding: 0 8%;
+}
+
 .about-section{
     overflow: hidden;
     overflow-wrap: break-word;
@@ -159,6 +163,10 @@ li{
 .support-box{
     background-color: #f8f9fa;
     padding: 40px;
+}
+
+.text-center{
+    padding: 0 4%;
 }
 
 .work-img{

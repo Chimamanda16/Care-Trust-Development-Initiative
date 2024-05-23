@@ -77,7 +77,6 @@ li{
 .carousel-btn{
     background-color: #de0f7a;
     border: none;
-    border-radius: 80px;
     color: #000;
     font-size: 18px;
     padding: 12px 35px;
@@ -86,7 +85,7 @@ li{
 
 .carousel-content{
     color: white;
-    margin-left: 15%;
+    margin-left: 8%;
     position: absolute;
     top: 50%;
 }

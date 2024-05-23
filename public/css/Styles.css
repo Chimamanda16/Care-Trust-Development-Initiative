@@ -185,26 +185,6 @@ li{
     }
 }
 
-@keyframes slideinLeft {
-    from{
-        transform: translate(-200px, 200px);
-    }
-    to{
-        transform: translate(0px, 0px);
-
-    }
-}
-
-@keyframes slideinRight {
-    from{
-        transform: translate(200px, 200px);
-    }
-    to{
-        transform: translate(0px, 0px);
-
-    }
-}
-
 @media screen and (max-width:1000px) {
     .about-btn{
         width: auto;

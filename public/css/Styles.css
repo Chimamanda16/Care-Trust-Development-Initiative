@@ -165,7 +165,7 @@ li{
     padding: 40px;
 }
 
-.text-center{
+.text-center, .work-section{
     padding: 0 4%;
 }
 
@@ -180,6 +180,12 @@ li{
     color: #0367ac;
     display: block;
     text-align: center;
+}
+
+.work-img-cont{
+    justify-content: center;
+    display: grid;
+    align-items: center;
 }
 
 @keyframes lazyload {

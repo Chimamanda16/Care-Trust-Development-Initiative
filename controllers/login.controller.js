@@ -22,7 +22,7 @@ async function getArticle(req, res){
     const $ = cheerio.load(article);
     const toHtml = $.html();
     let articleTitle = response.Title
-    res.render("about", {article: toHtml, title: articleTitle});
+    res.render("articles", {article: toHtml, title: articleTitle});
 }
 
 module.exports.getArticle = getArticle;

@@ -9,10 +9,10 @@ const { getArticles } = require("../controllers/login.controller");
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-postRouter.post("/article", (req, res)=>{
+postRouter.post("/articles", (req, res)=>{
     const article = req.body.getArticle;
     module.exports.article = article;
-    res.redirect("/about");
+    res.redirect("/article");
 });
 
 postRouter.post("/newPost", (req, res) =>{

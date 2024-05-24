@@ -47,14 +47,14 @@
                 <% let body = article.Body %>
                 <% if(body.length > 100){ %>
                     <% let postbody = body.substring(0, 100) + "...";  %>
-                    <form action="/article" method="post">
+                    <form action="/articles" method="post">
                         <h2> <%= title %> </h2>
                         <p> <%= postbody %> </p>
                         <button type="submit" name="getArticle" value= <%= title %> >View</button>
                     </form>
                 <% } %>
                 <% if(body.length < 100){ %>
-                    <form action="/article" method="post">
+                    <form action="/articles" method="post">
                         <h2> <%= title  %> </h2>
                         <p> <%= body %> </p>
                         <button type="submit" name="getArticle" value= <%= title %>>View</button>
